@@ -48,7 +48,7 @@ In the root of the project, execute:
     $ composer install
     $ patch vendor/twig/twig/lib/Twig/Environment.php < assets/Twig_Environment_Patch.diff
     
-    We need the package drush/drush [https://packagist.org/packages/drush/drush](https://packagist.org/packages/drush/drush)
+    We need the package drush https://packagist.org/packages/drush/drush
     
     $ drush sql-cli 
     
