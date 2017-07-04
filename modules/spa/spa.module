@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains spa.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function spa_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.spa':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Session List') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function spa_theme($existing, $type, $theme, $path) {
+  $theme = [
+    'spa' => [                   /* Name of the theme's template. */
+      'variables' => [
+        'props' => NULL,
+      ],
+    ],
+  ];
+
+  return $theme;
+}

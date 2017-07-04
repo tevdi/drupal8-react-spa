@@ -1,0 +1,40 @@
+name: Drupal8 Zymphonies Theme
+type: theme
+description: 'Zymphonies Drupal 8 Responsive Theme. Developed & Designed by <a href=http://www.zymphonies.com>Zymphonies</a><br/>Contact us for Drupal Design & Development <a href=mailto:info@zymphonies.com>info@zymphonies.com</a>'
+package: core
+# core: 8.x
+
+#Libraries
+libraries:
+  - drupal8_zymphonies_theme/bootstrap
+  - drupal8_zymphonies_theme/global-components
+
+#Regions
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  welcome_banner_text: 'Welcome Banner Text'  
+  topwidget_first: 'Top First Widget'
+  topwidget_second: 'Top Second Widget'
+  topwidget_third: 'Top Third Widget' 
+  highlighted: 'Highlighted' 
+  page_title: 'Page Title'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'  
+  bottom_first: 'Bottom First Widget'
+  bottom_second: 'Bottom Second Widget'
+  bottom_third: 'Bottom Third Widget'
+  bottom_forth: 'Bottom Forth Widget'
+  footer_first: 'Footer First Widget'
+  footer_second: 'Footer Second Widget'
+  footer_third: 'Footer Third Widget'
+  footer_menu: 'Footer Menu'
+  google_map: 'Google Map'
+  auto_hidden_block: 'Auto hidden blocks'
+# Information added by Drupal.org packaging script on 2016-01-08
+version: '8.x-1.0'
+core: '8.x'
+project: 'drupal8_zymphonies_theme'
+datestamp: 1452278346

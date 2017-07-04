@@ -1,0 +1,30 @@
+diff -Naur original/Environment.php patched/Environment.php
+--- original/Environment.php	2016-09-22 01:05:12.000000000 +0200
++++ patched/Environment.php	2017-06-24 21:07:53.000000000 +0200
+@@ -14,6 +14,10 @@
+  *
+  * @author Fabien Potencier <fabien@symfony.com>
+  */
++
++use Limenius\ReactRenderer\Renderer\PhpExecJsReactRenderer;
++use Limenius\ReactRenderer\Twig\ReactRenderExtension;  
++ 
+ class Twig_Environment
+ {
+     const VERSION = '1.25.0';
+@@ -114,6 +118,15 @@
+         $this->strictVariables = (bool) $options['strict_variables'];
+         $this->setCache($options['cache']);
+ 
++        global $base_url;
++        
++        // Change the route below to server side Webpack bundle file.
++        
++        $renderer = new PhpExecJsReactRenderer($base_url.'/modules/spa/spa/app/Resources/webpack-server/server-bundle.js');
++        $ext = new ReactRenderExtension($renderer, 'both');        
++        $this->addExtension(new Twig_Extension_StringLoader());
++        $this->addExtension($ext);
++        
+         $this->addExtension(new Twig_Extension_Core());
+         $this->addExtension(new Twig_Extension_Escaper($options['autoescape']));
+         $this->addExtension(new Twig_Extension_Optimizer($options['optimizations']));

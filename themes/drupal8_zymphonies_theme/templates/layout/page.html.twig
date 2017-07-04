@@ -1,0 +1,101 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.navigation: Items for the Navigation region.
+ * - page.page_title: Used by Current page Title.
+ * - page.banner: Items for the banner region.
+ * - page.highlighted: Items for the highlighted top  region.
+ * - page.content_top: The main content top of the current page.
+ * - page.help: Item for the help region.
+ * - page.breadcrumb: Item for the Breadcrumb region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.content_bottom: Items for the bottom in content region.
+ * - page.footer_top: Items for the footer top region.
+ * - page.footer_first: Items for the footer first region.
+ * - page.footer_second: Items for the footer Second region.
+ * - page.footer_third: Items for the footer third region.
+ * - page.footer_bottom: Items for the footer bottom region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ *
+ * @ingroup themeable
+ */
+#}
+
+<!-- Rendering navbar from theme, it will be rendered again using React, just an example. -->
+    
+    {% block manual_navbar %}
+    
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ front_page }}">Drupal React</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ front_page }}">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Players
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ front_page }}player/1">First Player</a></li>
+                        <li><a href="{{ front_page }}player/2">Second Player</a></li>
+                        <li><a href="{{ front_page }}player/3">Third Player</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ front_page }}player/1">First Player</a></li>
+                <li><a href="{{ front_page }}player/2">Second Player</a></li>
+                <li><a href="{{ front_page }}player/3">Third Player</a></li>
+            </ul>
+        </div>
+    </nav>
+
+      
+    {% endblock %}
+
+    <!--- Start content -->
+    {% if page.content %}
+    <div class="content_layout">
+        <div class={{contentlayout}}>
+        {{ page.content }}
+        </div>
+    </div>
+    {% endif %}
+    <!---End content -->

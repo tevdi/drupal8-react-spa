@@ -1,0 +1,23 @@
+spa.spa_index:
+  path: '/front'
+  defaults:
+    _controller: '\Drupal\spa\Controller\Spa::Render_Player_s'
+    _title: 'Isomorphic SPA With React'
+  requirements:
+    _permission: 'access content'
+    
+spa.spa_showPlayer:
+  path: '/player/{id}'
+  defaults:
+    _controller: '\Drupal\spa\Controller\Spa::Render_Player_s'
+    _title: 'Player Details'
+  requirements:
+    _permission: 'access content'
+
+spa.spa_insertPlayer:
+  path: '/insertPlayer'
+  defaults:
+    _controller: '\Drupal\spa\Controller\Spa::insertPlayer'
+    _title: 'insertPlayer'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,4 @@
+services:
+  serial.sql_storage:
+    class:  Drupal\serial\SerialSQLStorage
+    arguments: ['@entity.query', '@entity_type.manager']

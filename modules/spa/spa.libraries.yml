@@ -1,0 +1,10 @@
+ClientBundle:
+  version: 1.0
+  css:
+    layout:
+      web/webpack-client/stylesheets/client-bundle.css: {}
+  js:
+      web/webpack-client/client-bundle.js: {}
+  dependencies:
+    - core/drupalSettings
+
